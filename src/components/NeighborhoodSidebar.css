@@ -1,0 +1,17 @@
+.neighborhood-sidebar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 300px;
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+}
+
+.neighborhood-list-item:hover {
+  background-color: #f0f0f0 !important;
+}
