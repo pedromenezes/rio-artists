@@ -13,11 +13,15 @@ export const artistsByNeighborhood: ArtistNeighborhood[] = [
     { "nome": "Anitta", "id": "7FNnA9vBm6EKceENgCGRMb" }
   ]},
   { "bairro": "Botafogo", "artistas": [
-    { "nome": "Beth Carvalho", "id": "56TkPi7rpmU8jTpkcK7FY3" } 
+    { "nome": "Beth Carvalho", "id": "56TkPi7rpmU8jTpkcK7FY3" },
+    { "nome": "Paulinho da Viola", "id": "0t2xdTxRXnffsmpMamH8Ls" }
   ]},
   { "bairro": "Catete", "artistas": [
     { "nome": "Cartola", "id": "0RSWHhBUwW7lhCqXqxKxWN" },
     { "nome": "Chico Buarque", "id": "6tOsSffQQIXmK8TqsDck8t" } 
+  ]},
+  { "bairro": "Encantado", "artistas": [
+    { "nome": "Aracy de Almeida", "id": "4dUyAH3f2lQ4QCXrUtJ778" },
   ]},
   { "bairro": "Cidade de Deus", "artistas": [
     { "nome": "MV Bill", "id": "4oE4ASN8auDhoW9vsXp3VJ" } 
@@ -27,7 +31,8 @@ export const artistsByNeighborhood: ArtistNeighborhood[] = [
     { "nome": "Carmen Miranda", "id": "7iSJhi05cFvFylzw921y3H" } 
   ]},
   { "bairro": "Estácio", "artistas": [
-    { "nome": "Luiz Melodia", "id": "1zZjt7cDeeJSLWZYK34r7W" } 
+    { "nome": "Luiz Melodia", "id": "1zZjt7cDeeJSLWZYK34r7W" },
+    { "nome": "Gonzaguinha", "id": "1LOFaxDBvn3YuvarTldGAe" }
   ]},
   { "bairro": "Gamboa", "artistas": [
     { "nome": "Donga", "id": "0Sm0cjLo4DiVoprCYbiKzc" }
@@ -54,13 +59,23 @@ export const artistsByNeighborhood: ArtistNeighborhood[] = [
   { "bairro": "Leblon", "artistas": [
     { "nome": "Cazuza", "id": "1PwOU6fFbmaGkK3wkbb8fU" }
   ]},
+  { "bairro": "Andaraí", "artistas": [
+    { "nome": "Marcelo D2", "id": "1vEN3d3dJbmdHQpXD6AIkL" }
+  ]},
   { "bairro": "Madureira", "artistas": [
     { "nome": "Leci Brandão", "id": "5iiQvuDCnlXoK8iAhydW0u" },
     { "nome": "Arlindo Cruz", "id": "096an3uS6ZaK2XySae6SqP" }
   ]},
+  { "bairro": "Santa Teresa", "artistas": [
+    { "nome": "Gilberto Gil", "id": "7oEkUINVIj1Nr3Wnj8tzqr" },
+    { "nome": "Seu Jorge", "id": "0i1s9WcIu0PrUvHzALgofo" }
+  ] },
   { "bairro": "Mangueira", "artistas": [
     { "nome": "Nelson Sargento", "id": "0Ij2lGitwYszblscnFtglL" }, 
     { "nome": "Jamelão", "id": "4PirWL5JYf8HerMVvmwuD0" }
+  ]},
+  { "bairro": "Pilares", "artistas": [
+    { "nome": "Xande de Pilares", "id": "4IQKOXNGjuRRe0WgOm5YfB" }
   ]},
   { "bairro": "Osvaldo Cruz", "artistas": [
     { "nome": "Monarco", "id": "0Aqcba7AHmDUp7UeAQbEDm" },
@@ -83,7 +98,9 @@ export const artistsByNeighborhood: ArtistNeighborhood[] = [
   { "bairro": "Tijuca", "artistas": [
     { "nome": "Marisa Monte", "id": "0rSTXALHu0EKAawPLBdODH" }, 
     { "nome": "Tom Jobim", "id": "3pO5VjZ4wOHCMBXOvbMISG" }, 
-    { "nome": "Mr. Catra", "id": "1mXaaMbQM3IYuhNWaZdFuE" } 
+    { "nome": "Mr. Catra", "id": "1mXaaMbQM3IYuhNWaZdFuE" },
+    { "nome": "Xande de Pilares", "id": "4IQKOXNGjuRRe0WgOm5YfB" },
+    { "nome": "Erasmo Carlos", "id": "6cHQUDAPGKRE2NbVjBlOcz" },
   ]},
   { "bairro": "Urca", "artistas": [
     { "nome": "Roberto Carlos", "id": "7fAKtXSdNInWAIf0jVUz65" }, 
