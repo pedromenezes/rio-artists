@@ -19,9 +19,6 @@ export const artistsByNeighborhood: ArtistNeighborhood[] = [
     { "nome": "Cartola", "id": "0RSWHhBUwW7lhCqXqxKxWN" },
     { "nome": "Chico Buarque", "id": "6tOsSffQQIXmK8TqsDck8t" } 
   ]},
-  { "bairro": "Cavalcanti", "artistas": [
-    { "nome": "Arlindo Cruz", "id": "096an3uS6ZaK2XySae6SqP" } 
-  ]},
   { "bairro": "Cidade de Deus", "artistas": [
     { "nome": "MV Bill", "id": "4oE4ASN8auDhoW9vsXp3VJ" } 
   ]},
@@ -58,7 +55,8 @@ export const artistsByNeighborhood: ArtistNeighborhood[] = [
     { "nome": "Cazuza", "id": "1PwOU6fFbmaGkK3wkbb8fU" }
   ]},
   { "bairro": "Madureira", "artistas": [
-    { "nome": "Leci Brandão", "id": "5iiQvuDCnlXoK8iAhydW0u" } 
+    { "nome": "Leci Brandão", "id": "5iiQvuDCnlXoK8iAhydW0u" },
+    { "nome": "Arlindo Cruz", "id": "096an3uS6ZaK2XySae6SqP" }
   ]},
   { "bairro": "Mangueira", "artistas": [
     { "nome": "Nelson Sargento", "id": "0Ij2lGitwYszblscnFtglL" }, 
