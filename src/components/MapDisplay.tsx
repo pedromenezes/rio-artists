@@ -111,7 +111,7 @@ const MapDisplay: React.FC<MapDisplayProps> = ({
                               [...artists].sort((a, b) => a.nome.localeCompare(b.nome))
                             }
                             renderItem={(artist) => (
-                              <List.Item style={{ padding: '4px 0' }}>
+                              <List.Item style={{ padding: 0, border: 'none' }}>
                                 <Button
                                   type="link"
                                   size="small"
@@ -123,7 +123,8 @@ const MapDisplay: React.FC<MapDisplayProps> = ({
                                     border: '1px solid #eee',
                                     borderRadius: '4px',
                                     width: '100%',
-                                    textAlign: 'center'
+                                    textAlign: 'center',
+                                    marginBottom: '4px'
                                   }}
                                 >
                                   {artist.nome}
