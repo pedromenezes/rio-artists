@@ -82,7 +82,7 @@ const NeighborhoodSidebar: React.FC<NeighborhoodSidebarProps> = ({
           className="neighborhood-sidebar"
         >
             <Title level={4} style={{ marginBottom: '16px', textAlign: 'center' }}>Rio Artists</Title>
-            <Paragraph style={{ marginBottom: '16px', textAlign: 'center' }}>
+            <Paragraph style={{ marginBottom: '16px', textAlign: 'left' }}>
                 Select a neighborhood to see related artists, click an artist to play their music.
             </Paragraph>
             <AutoComplete
