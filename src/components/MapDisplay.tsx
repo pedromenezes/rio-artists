@@ -116,7 +116,15 @@ const MapDisplay: React.FC<MapDisplayProps> = ({
                                   type="link"
                                   size="small"
                                   onClick={() => onSelectArtist(artist.id, artist.nome)}
-                                  style={{ padding: 0, height: 'auto', lineHeight: 'inherit' }}
+                                  style={{
+                                    padding: '2px 6px',
+                                    height: 'auto',
+                                    lineHeight: 'inherit',
+                                    border: '1px solid #eee',
+                                    borderRadius: '4px',
+                                    width: '100%',
+                                    textAlign: 'center'
+                                  }}
                                 >
                                   {artist.nome}
                                 </Button>
