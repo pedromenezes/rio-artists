@@ -6,6 +6,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './App.tsx'
 import { neighborhoodLoader } from './loaders/neighborhoodLoader'
 
+import 'antd/dist/reset.css'
+import 'leaflet/dist/leaflet.css'
 import './index.css'
 
 const router = createBrowserRouter([

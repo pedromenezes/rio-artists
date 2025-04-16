@@ -1,6 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { Layout, Input, Typography, AutoComplete } from 'antd';
 
+import './NeighborhoodSidebar.css';
+
 const { Sider } = Layout;
 const { Title } = Typography;
 const { Paragraph } = Typography;

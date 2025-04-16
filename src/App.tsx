@@ -9,10 +9,7 @@ import NeighborhoodSidebar from './components/NeighborhoodSidebar';
 import SpotifyPlayer from './components/SpotifyPlayer';
 import { NeighborhoodFeature } from './types';
 
-import 'antd/dist/reset.css';
-import 'leaflet/dist/leaflet.css';
 import './App.css';
-import './components/NeighborhoodSidebar.css';
 
 const { Content } = Layout;
 
