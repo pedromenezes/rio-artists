@@ -9,8 +9,6 @@ import NeighborhoodSidebar from './components/NeighborhoodSidebar';
 import SpotifyPlayer from './components/SpotifyPlayer';
 import { NeighborhoodFeature } from './types';
 
-import './App.css';
-
 const { Content } = Layout;
 
 function App() {
