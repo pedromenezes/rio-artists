@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { Layout, Input, Typography, AutoComplete } from 'antd';
 
 import './NeighborhoodSidebar.css';
@@ -24,7 +24,7 @@ const NeighborhoodSidebar: React.FC<NeighborhoodSidebarProps> = ({
 }) => {
     const [highlightedIndex, setHighlightedIndex] = useState<number>(-1);
 
-    const filteredOptions = useMemo(() => {
+    const filteredOptions = (() => {
         if (!searchTerm) {
             return autoCompleteOptions;
         }
@@ -32,7 +32,7 @@ const NeighborhoodSidebar: React.FC<NeighborhoodSidebarProps> = ({
         return autoCompleteOptions.filter(option =>
             option.value.toUpperCase().includes(upperSearchTerm)
         );
-    }, [searchTerm, autoCompleteOptions]);
+    })();
 
     const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
         let newIndex = highlightedIndex;

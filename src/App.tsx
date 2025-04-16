@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef } from 'react';
 import { useLoaderData } from 'react-router-dom';
 
 import { Layout, notification } from 'antd';
@@ -17,16 +17,14 @@ function App() {
   const neighborhoodData = initialNeighborhoodData;
   const [api, contextHolder] = notification.useNotification();
 
-  const allNeighborhoods = useMemo(() => neighborhoodData, [neighborhoodData]);
+  const allNeighborhoods = neighborhoodData;
 
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedNeighborhood, setSelectedNeighborhood] = useState<string | null>(null);
   const [highlightedNeighborhood, setHighlightedNeighborhood] = useState<string | null>(null);
   const [selectedArtistId, setSelectedArtistId] = useState<string | null>(null);
 
-  const autoCompleteOptions = useMemo(() =>
-      allNeighborhoods.map(feature => ({ value: feature.attributes.nome }))
-  , [allNeighborhoods]);
+  const autoCompleteOptions = allNeighborhoods.map(feature => ({ value: feature.attributes.nome }));
 
   const handleSearchChange = useCallback((value: string) => {
     setSearchTerm(value);

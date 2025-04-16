@@ -1,4 +1,4 @@
-import React, { MutableRefObject, useMemo } from 'react';
+import React, { MutableRefObject } from 'react';
 import { MapContainer, TileLayer, Polygon, Tooltip, Popup } from 'react-leaflet';
 import { Map, LatLngExpression } from 'leaflet';
 import { Typography, List, Button, Empty } from 'antd';
@@ -25,21 +25,21 @@ const MapDisplay: React.FC<MapDisplayProps> = ({
     onMapHighlightChange,
     onSelectArtist,
 }) => {
-    const artistCountMap: { [key: string]: number } = useMemo(() => {
+    const artistCountMap: { [key: string]: number } = (() => {
       const counts: { [key: string]: number } = {};
       artistsByNeighborhood.forEach(item => {
         counts[item.bairro] = item.artistas.length;
       });
       return counts;
-    }, []);
+    })();
 
-    const artistsMap: { [key: string]: Artist[] } = useMemo(() => {
+    const artistsMap: { [key: string]: Artist[] } = (() => {
         const map: { [key: string]: Artist[] } = {};
         artistsByNeighborhood.forEach(item => {
             map[item.bairro] = item.artistas;
         });
         return map;
-    }, []);
+    })();
 
     return (
         <MapContainer
