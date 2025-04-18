@@ -51,7 +51,7 @@ An interactive map showcasing the musical heritage of Rio de Janeiro's neighborh
 
 ## Data Sources
 
-- Neighborhood boundaries from Data.Rio
+- Neighborhood boundaries from Data.Rio (cached from https://pgeo3.rio.rj.gov.br/arcgis/rest/services/Cartografia/Limites_administrativos/MapServer/4/query?where=1%3D1&outFields=*&outSR=4326&f=json)
 - Artist information generated using AI and manually verified
 - Spotify API integration for fetching artist IDs and music playback
 - Custom script for automated Spotify artist ID retrieval using their API
