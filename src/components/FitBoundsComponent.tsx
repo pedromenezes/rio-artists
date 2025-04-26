@@ -5,9 +5,10 @@ import { NeighborhoodFeature, Ring, Coordinate } from '../types';
 
 interface FitBoundsProps {
   allNeighborhoods: NeighborhoodFeature[];
+  selectedNeighborhood: string | null;
 }
 
-function FitBoundsComponent({ allNeighborhoods }: FitBoundsProps) {
+function FitBoundsComponent({ allNeighborhoods, selectedNeighborhood }: FitBoundsProps) {
   const map = useMap();
 
   const initialBounds = (() => {
@@ -33,6 +34,7 @@ function FitBoundsComponent({ allNeighborhoods }: FitBoundsProps) {
     return null;
   })();
 
+  // Run only once at component mount
   useEffect(() => {
     if (map && initialBounds && initialBounds.isValid()) {
       // Adjust bounds to shift view rightwards
@@ -53,7 +55,37 @@ function FitBoundsComponent({ allNeighborhoods }: FitBoundsProps) {
           map.fitBounds(adjustedBounds, { padding: [20, 20] });
       }
     }
-  }, [map, initialBounds]); 
+  }, []);
+
+  // Effect to zoom to selected neighborhood
+  useEffect(() => {
+    if (!map || !selectedNeighborhood || !allNeighborhoods) return;
+    
+    const neighborhood = allNeighborhoods.find(n => 
+      n.attributes.nome === selectedNeighborhood
+    );
+    
+    if (neighborhood) {
+      // Calculate bounds for this specific neighborhood
+      let minLat = 90, maxLat = -90, minLon = 180, maxLon = -180;
+      
+      neighborhood.geometry.rings.forEach((ring: Ring) => {
+        ring.forEach((coord: Coordinate) => {
+          const lon = coord[0];
+          const lat = coord[1];
+          if (lat < minLat) minLat = lat;
+          if (lat > maxLat) maxLat = lat;
+          if (lon < minLon) minLon = lon;
+          if (lon > maxLon) maxLon = lon;
+        });
+      });
+      
+      if (minLat <= 90 && maxLat >= -90 && minLon <= 180 && maxLon >= -180) {
+        const bounds = L.latLngBounds([minLat, minLon], [maxLat, maxLon]);
+        map.fitBounds(bounds, { padding: [50, 50] });
+      }
+    }
+  }, [selectedNeighborhood, map, allNeighborhoods]);
 
   return null;
 }

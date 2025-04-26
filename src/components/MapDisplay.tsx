@@ -144,7 +144,10 @@ const MapDisplay: React.FC<MapDisplayProps> = ({
                   </Polygon>
                 );
             })}
-            <FitBoundsComponent allNeighborhoods={neighborhoods} />
+            <FitBoundsComponent 
+                allNeighborhoods={neighborhoods} 
+                selectedNeighborhood={selectedNeighborhood} 
+            />
         </MapContainer>
     );
 };
