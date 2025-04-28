@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { useLoaderData } from 'react-router-dom';
 
 import { Layout, notification } from 'antd';
@@ -26,35 +26,35 @@ function App() {
 
   const autoCompleteOptions = allNeighborhoods.map(feature => ({ value: feature.attributes.nome }));
 
-  const handleSearchChange = useCallback((value: string) => {
+  const handleSearchChange = (value: string) => {
     setSearchTerm(value);
     if (selectedNeighborhood && value !== selectedNeighborhood) {
       setSelectedNeighborhood(null);
     }
     setHighlightedNeighborhood(null);
-  }, [selectedNeighborhood]);
+  };
 
-  const handleSelectNeighborhood = useCallback((value: string) => {
+  const handleSelectNeighborhood = (value: string) => {
     setSearchTerm(value);
     setSelectedNeighborhood(value);
     setHighlightedNeighborhood(null);
-  }, []);
+  };
 
-  const handleHighlightChange = useCallback((value: string | null) => {
+  const handleHighlightChange = (value: string | null) => {
     setHighlightedNeighborhood(value);
-  }, []);
+  };
 
-  const handleMapHighlightChange = useCallback((value: string | null) => {
+  const handleMapHighlightChange = (value: string | null) => {
     setHighlightedNeighborhood(value);
-  }, []);
+  };
 
-  const handleSelectArtist = useCallback((artistId: string, artistName: string) => {
+  const handleSelectArtist = (artistId: string, artistName: string) => {
     api.info({
       message: `Selected Artist: ${artistName}`,
       placement: 'bottom',
     });
     setSelectedArtistId(artistId);
-  }, [api]);
+  };
 
   return (
     <Layout style={{ minHeight: '100vh' }}>
