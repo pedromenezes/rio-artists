@@ -26,18 +26,22 @@ function App() {
 
   const autoCompleteOptions = allNeighborhoods.map(feature => ({ value: feature.attributes.nome }));
 
+  const clearHighlight = () => {
+    setHighlightedNeighborhood(null);
+  };
+
   const handleSearchChange = (value: string) => {
     setSearchTerm(value);
     if (selectedNeighborhood && value !== selectedNeighborhood) {
       setSelectedNeighborhood(null);
     }
-    setHighlightedNeighborhood(null);
+    clearHighlight();
   };
 
   const handleSelectNeighborhood = (value: string) => {
     setSearchTerm(value);
     setSelectedNeighborhood(value);
-    setHighlightedNeighborhood(null);
+    clearHighlight();
   };
 
   const handleHighlightChange = (value: string | null) => {
@@ -67,6 +71,7 @@ function App() {
             highlightedNeighborhood={highlightedNeighborhood}
             onMapHighlightChange={handleMapHighlightChange}
             onSelectArtist={handleSelectArtist}
+            clearHighlight={clearHighlight}
         />
         <NeighborhoodSidebar
             autoCompleteOptions={autoCompleteOptions}
@@ -74,6 +79,7 @@ function App() {
             onSearchChange={handleSearchChange}
             onSelectNeighborhood={handleSelectNeighborhood}
             onHighlight={handleHighlightChange}
+            clearHighlight={clearHighlight}
         />
         {selectedArtistId && <SpotifyPlayer artistId={selectedArtistId} />}
       </Content>

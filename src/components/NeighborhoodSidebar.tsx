@@ -13,6 +13,7 @@ interface NeighborhoodSidebarProps {
     onSearchChange: (value: string) => void;
     onSelectNeighborhood: (value: string) => void;
     onHighlight: (value: string | null) => void;
+    clearHighlight: () => void;
 }
 
 const NeighborhoodSidebar: React.FC<NeighborhoodSidebarProps> = ({
@@ -21,6 +22,7 @@ const NeighborhoodSidebar: React.FC<NeighborhoodSidebarProps> = ({
     onSearchChange,
     onSelectNeighborhood,
     onHighlight,
+    clearHighlight,
 }) => {
     const [highlightedIndex, setHighlightedIndex] = useState<number>(-1);
 
@@ -61,19 +63,19 @@ const NeighborhoodSidebar: React.FC<NeighborhoodSidebarProps> = ({
         if (newIndex >= 0 && newIndex < filteredOptions.length) {
             onHighlight(filteredOptions[newIndex].value);
         } else {
-            onHighlight(null);
+            clearHighlight();
         }
     };
 
     const handleSearch = (value: string) => {
         setHighlightedIndex(-1);
-        onHighlight(null);
+        clearHighlight();
         onSearchChange(value);
     }
 
     const handleSelect = (value: string) => {
         setHighlightedIndex(-1);
-        onHighlight(null);
+        clearHighlight();
         onSelectNeighborhood(value);
     }
 

@@ -15,6 +15,7 @@ interface MapDisplayProps {
     highlightedNeighborhood: string | null;
     onMapHighlightChange: (value: string | null) => void;
     onSelectArtist: (artistId: string, artistName: string) => void;
+    clearHighlight: () => void;
 }
 
 const MapDisplay: React.FC<MapDisplayProps> = ({
@@ -24,6 +25,7 @@ const MapDisplay: React.FC<MapDisplayProps> = ({
     highlightedNeighborhood,
     onMapHighlightChange,
     onSelectArtist,
+    clearHighlight,
 }) => {
     const artistCountMap: { [key: string]: number } = (() => {
       const counts: { [key: string]: number } = {};
@@ -95,7 +97,7 @@ const MapDisplay: React.FC<MapDisplayProps> = ({
                     positions={positions}
                     eventHandlers={{
                         mouseover: () => onMapHighlightChange(name),
-                        mouseout: () => onMapHighlightChange(null)
+                        mouseout: () => clearHighlight()
                     }}
                   >
                     <Tooltip>{name}</Tooltip>
